@@ -1,0 +1,15 @@
+-- Table: public.corns
+
+-- DROP TABLE IF EXISTS public.corns;
+
+CREATE TABLE IF NOT EXISTS public.corns
+(
+    id_corn integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    quantity integer NOT NULL,
+    created_at timestamp without time zone NOT NULL DEFAULT CURRENT_TIMESTAMP
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.corns
+    OWNER to postgres;
