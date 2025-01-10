@@ -1,13 +1,12 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { CornPayload } from '@/interfaces/corns';
-import { API_ROUTE } from '@/lib/API-routes';
 
 export async function POST(request: Request) {
     try {
         const { quantity }: CornPayload = await request.json();
 
         const response: AxiosResponse<{ message: string }> = await axios.post(
-            `${API_ROUTE}/corn`,
+            `${process.env.NEXT_PUBLIC_API_ROUTE}/corn`,
             { quantity },
             {
                 headers: {
