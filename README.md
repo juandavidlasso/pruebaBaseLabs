@@ -15,6 +15,8 @@
 
 6. En la consola de server ejecutar el comando `npm run dev` para iniciar el servidor.
 
+(Nota): Actualizar los valores del archivo .env de acuerdo a las credenciales de su moto de base de datos.
+
 7. En la consola de client ejecutar el comando `npm start` para iniciar el modo de producción o el comando `npm run dev` para iniciar en modo de desarrollo.
 
 8. Por defecto el cliente inicia en el puerto 3000, abrir el navegador en la siguiente url: `http://localhost:3000/profile`
