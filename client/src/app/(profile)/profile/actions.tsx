@@ -1,10 +1,9 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { Corn, CornPayload } from '@/interfaces/corns';
-import { API_ROUTE } from '@/lib/API-routes';
 
 export const getCorns = async (): Promise<Corn[]> => {
     try {
-        const response: AxiosResponse<Corn[]> = await axios.get(`${API_ROUTE}/corns`);
+        const response: AxiosResponse<Corn[]> = await axios.get('/api/corns');
         return response.data;
     } catch (error) {
         return [];
@@ -13,11 +12,8 @@ export const getCorns = async (): Promise<Corn[]> => {
 
 export const postCorn = async (payload: CornPayload): Promise<{ message: string; status: number }> => {
     try {
-        const response: AxiosResponse<{ message: string }> = await axios.post(`${API_ROUTE}/corn`, payload, {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
+        const response: AxiosResponse<{ message: string }> = await axios.post('/api/corn', payload);
+
         return {
             status: response.status,
             message: response.data.message
